@@ -7,9 +7,22 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: 'Marry Me',
   description:
-    'A simple Next.js app to propose to my girlfriend. Will you marry me, my love?',
+    'about celebrating the unpredictability of human connection through laughter.',
   authors: [{ name: 'Micky Rajkumar', url: 'https://mickyrajkumar.me' }],
-  creator: 'Micky Rajkumar'
+  creator: 'Micky Rajkumar',
+  openGraph: {
+    title: 'Marry Me',
+    description:
+      'about celebrating the unpredictability of human connection through laughter.',
+    images: [
+      {
+        url: '/images/meta-image.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Description of image'
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
