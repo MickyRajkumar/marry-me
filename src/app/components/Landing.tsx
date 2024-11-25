@@ -1,13 +1,15 @@
 'use client';
 import { FC, useState } from 'react';
 export const Landing: FC = () => {
-  const [position, setPosition] = useState({ top: 490, right: 790 });
+  const [position, setPosition] = useState({ top: -10, right: 0 });
   const [isYes, setIsYes] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   const [mobilePosition, setMobilePosition] = useState({ top: 467, right: 75 });
 
   const handleMobileHover = () => {
     // Get window dimensions
+    setIsHover(true);
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -21,6 +23,7 @@ export const Landing: FC = () => {
   };
 
   const handleHover = () => {
+    setIsHover(true);
     // Get window dimensions
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
@@ -75,7 +78,7 @@ export const Landing: FC = () => {
           <h1 className="text-2xl">
             Will you marry me and make me the happiest person alive?
           </h1>
-          <div className="mt-4 w-[16rem] mx-auto">
+          <div className={`mt-4 w-[16rem] mx-auto ${!isHover && 'relative'}`}>
             <button
               onClick={() => setIsYes(true)}
               className="bg-green-500 overflow-hidden text-white font-bold rounded-lg px-5 py-2 shadow-lg"
@@ -142,7 +145,7 @@ export const Landing: FC = () => {
             Will you marry me and make me
           </h1>
           <h1 className="text-2xl text-center">the happiest person alive?</h1>
-          <div className="mt-4 w-[16rem] mx-auto">
+          <div className={`mt-4 w-[16rem] mx-auto ${isHover && 'relative'}`}>
             <button
               onClick={() => setIsYes(true)}
               className="bg-green-500 overflow-hidden text-white font-bold rounded-lg px-5 py-2 shadow-lg"
