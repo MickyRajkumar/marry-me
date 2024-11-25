@@ -5,7 +5,7 @@ export const Landing: FC = () => {
   const [isYes, setIsYes] = useState(false);
   const [isHover, setIsHover] = useState(false);
 
-  const [mobilePosition, setMobilePosition] = useState({ top: 467, right: 75 });
+  const [mobilePosition, setMobilePosition] = useState({ top: -10, right: 0 });
 
   const handleMobileHover = () => {
     // Get window dimensions
@@ -145,7 +145,7 @@ export const Landing: FC = () => {
             Will you marry me and make me
           </h1>
           <h1 className="text-2xl text-center">the happiest person alive?</h1>
-          <div className={`mt-4 w-[16rem] mx-auto ${isHover && 'relative'}`}>
+          <div className={`mt-4 w-[16rem] mx-auto ${!isHover && 'relative'}`}>
             <button
               onClick={() => setIsYes(true)}
               className="bg-green-500 overflow-hidden text-white font-bold rounded-lg px-5 py-2 shadow-lg"
