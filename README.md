@@ -3,7 +3,7 @@
 Clone the Repository:
 
 ```bash
-git clone git@github.com:kokr8-dev/kokr8-app.git
+git clone repo
 ```
 
 Download the recommended extension for vsCode.
